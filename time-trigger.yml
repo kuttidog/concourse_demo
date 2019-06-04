@@ -1,0 +1,22 @@
+---
+resources:
+  - name: resource-testing
+    type: git
+    source:
+      uri: https://github.com/kuttidog/concourse_demo.git
+      branch: master
+
+  - name: my-timer
+    type: time
+    source:
+      interval: 1m
+
+jobs:
+  - name: job-hello-world
+    serial: true
+    plan:
+      - get: resource-testing
+      - get: my-timer
+        trigger: true
+      - task: hello-world
+        file: resource-testing/hello_world.yml
