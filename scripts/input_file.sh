@@ -1,9 +1,9 @@
 #!/bin/sh
   
 mkdir create-files
-echo "file1" > some-files/file1
-echo "file2" > some-files/file2
-echo "file3" > some-files/file3
-echo "file4" > some-files/file4
+echo "file1" > create-files/file1
+echo "file2" > create-files/file2
+echo "file3" > create-files/file3
+echo "file4" > create-files/file4
 
 ls create-files/*
